@@ -8,9 +8,14 @@
 import SwiftUI
 struct Words{
     var noun0 = ""
-    var animal = ""
-    var noise = ""
+    var noun1 = ""
+    var pluralNoun = ""
+    var pluralNoun0 = ""
+    var verbEndingIng = ""
+    var verbEndingIng0 = ""
+    var game = ""
     var adjective0 = ""
+    var adjective1 = ""
 }
 struct CustomTextField: View {
     let placeholder: String
@@ -30,26 +35,39 @@ struct ContentView: View {
             VStack {
               Text("Please enter the requested words below")
                 HStack {
-                    CustomTextField(placeholder: "adjective", bindingText: $words.adjective0)
+                    CustomTextField(placeholder: "Adjective", bindingText: $words.adjective0)
+                        .multilineTextAlignment(.center)
+                    CustomTextField(placeholder: "Adjective", bindingText: $words.adjective1)
                         .multilineTextAlignment(.center)
                 }
                 HStack {
-                    CustomTextField(placeholder: "noun", bindingText: $words.noun0)
+                    CustomTextField(placeholder: "Pural Noun", bindingText: $words.pluralNoun)
+                        .multilineTextAlignment(.center)
+                    CustomTextField(placeholder: "Pural Noun", bindingText: $words.pluralNoun0)
                         .multilineTextAlignment(.center)
                 }
                 HStack {
-                    CustomTextField(placeholder: "animal", bindingText: $words.animal)
+                    CustomTextField(placeholder: "Verb ending with -ing", bindingText: $words.verbEndingIng)
+                        .multilineTextAlignment(.center)
+                    CustomTextField(placeholder: "Verb ending with -ing", bindingText: $words.verbEndingIng0)
                         .multilineTextAlignment(.center)
                 }
                 HStack{
-                    CustomTextField(placeholder: "noise", bindingText: $words.noise)
+                    CustomTextField(placeholder: "Game", bindingText: $words.game)
+                        .multilineTextAlignment(.center)
+                }
+                HStack{
+                    CustomTextField(placeholder: "Noun", bindingText: $words.noun0)
+                        .multilineTextAlignment(.center)
+                    CustomTextField(placeholder: "Noun", bindingText: $words.noun1)
                         .multilineTextAlignment(.center)
                 }
                 Spacer()
                 NavigationLink("Next", destination: StoryView(words: words))
             }
+            .navigationTitle("Word Play")
         }
-        .navigationTitle("Word Play")
+        
     }
 }
 

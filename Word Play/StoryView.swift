@@ -13,11 +13,15 @@ struct StoryView: View {
     
     // Helper function to generate the story
     func writeStory() -> String {
-        return "\(words.adjective0) Macdonald had a \(words.noun0), E-I-E-I-O and on that \(words.noun0) he had an \(words.animal), E-I-E-I-O with a \(words.noise) \(words.noise) here and a \(words.noise) \(words.noise) there, here a \(words.noise), there a \(words.noise), everywhere a \(words.noise) \(words.noise), \(words.adjective0) Macdonald had a \(words.noun0), E-I-E-I-O."
+        return "A vacation is when you take a trip to some \(words.adjective0) place with your \(words.adjective0) family. Usually you go to some place that is near a/an \(words.noun0) or up on a/an \(words.noun1). A good vacation place is one where you can ride \(words.pluralNoun) or play \(words.game) or go hunting for \(words.pluralNoun0). I like to spend my time \(words.verbEndingIng) or \(words.verbEndingIng0)."
+        
     }
+    
     
     var body: some View {
         Text(writeStory())
+            .multilineTextAlignment(.center)
+                        .padding()
     }
 }
 
